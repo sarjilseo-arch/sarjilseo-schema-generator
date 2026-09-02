@@ -1260,19 +1260,21 @@ function App() {
         </section>
 
         <section className="disclaimer">
-          <strong>Schema.org structured data</strong>
-          <span>
-            This tool generates JSON-LD based on Schema.org vocabulary.
-            Always review the generated markup and Google's current
-            structured-data guidelines before publishing.
-          </span>
-        </section>
-      </main>
+  <strong>Schema.org structured data</strong>{" "}
+  <span>
+    This tool generates JSON-LD based on Schema.org vocabulary.
+    Always review the generated markup and Google's current
+    structured-data guidelines before publishing.
+  </span>
+</section>
+</main>
 
-      <footer>
-        <span>© {new Date().getFullYear()} SarjilSEO</span>
-        <span>Schema Markup Generator</span>
-      </footer>
+<footer className="footer">
+  <div className="footer-content">
+    <span>© {new Date().getFullYear()} SarjilSEO</span>
+    <span>Schema Markup Generator</span>
+  </div>
+</footer>
     </div>
   );
 }
