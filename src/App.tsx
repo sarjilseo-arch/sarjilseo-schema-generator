@@ -1250,14 +1250,15 @@ const [copied, setCopied] = useState(false);
                 </button>
 
                 <button
-                  className="button secondary"
-                  onClick={() => {
-                    setReviewInput("");
-                    setReviewError("");
-                  }}
-                >
-                  Clear
-                </button>
+  className="button secondary"
+  onClick={() => {
+    setReviewInput("");
+    setReviewError("");
+    setReviewSuccess("");
+  }}
+>
+  Clear
+</button>
               </div>
 
               <div className="review-note">
