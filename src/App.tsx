@@ -588,7 +588,7 @@ const [copied, setCopied] = useState(false);
             label="Telephone"
             value={form.telephone}
             onChange={(value) => updateField("telephone", value)}
-            placeholder="+91 98765 43210"
+            placeholder="Phone number"
           />
         </>
       );
@@ -627,37 +627,37 @@ const [copied, setCopied] = useState(false);
             label="Telephone"
             value={form.telephone}
             onChange={(value) => updateField("telephone", value)}
-            placeholder="+91 98765 43210"
+            placeholder="Phone number"
           />
           <Field
             label="Street address"
             value={form.streetAddress}
             onChange={(value) => updateField("streetAddress", value)}
-            placeholder="123 Main Street"
+            placeholder="Street address"
           />
           <Field
             label="City"
             value={form.city}
             onChange={(value) => updateField("city", value)}
-            placeholder="Mumbai"
+            placeholder="City"
           />
           <Field
             label="State / region"
             value={form.region}
             onChange={(value) => updateField("region", value)}
-            placeholder="Maharashtra"
+            placeholder="State or region"
           />
           <Field
             label="Postal code"
             value={form.postalCode}
             onChange={(value) => updateField("postalCode", value)}
-            placeholder="400001"
+            placeholder="Postal code"
           />
           <Field
             label="Country"
             value={form.country}
             onChange={(value) => updateField("country", value)}
-            placeholder="India"
+            placeholder="Country"
           />
         </>
       );
@@ -716,13 +716,13 @@ const [copied, setCopied] = useState(false);
             label="Date published"
             value={form.datePublished}
             onChange={(value) => updateField("datePublished", value)}
-            placeholder="2026-09-02"
+            placeholder="YYYY-MM-DD"
           />
           <Field
             label="Date modified"
             value={form.dateModified}
             onChange={(value) => updateField("dateModified", value)}
-            placeholder="2026-09-02"
+            placeholder="YYYY-MM-DD"
           />
         </>
       );
@@ -761,13 +761,13 @@ const [copied, setCopied] = useState(false);
             label="Price"
             value={form.price}
             onChange={(value) => updateField("price", value)}
-            placeholder="999"
+            placeholder="Price"
           />
           <Field
             label="Currency"
             value={form.currency}
             onChange={(value) => updateField("currency", value)}
-            placeholder="INR"
+            placeholder="Currency code"
           />
         </>
       );
@@ -780,14 +780,14 @@ const [copied, setCopied] = useState(false);
             label="Service name"
             value={form.name}
             onChange={(value) => updateField("name", value)}
-            placeholder="SEO consulting"
+            placeholder="Service name"
             required
           />
           <Field
             label="Service type"
             value={form.serviceType}
             onChange={(value) => updateField("serviceType", value)}
-            placeholder="SEO Service"
+            placeholder="Service type"
           />
           <Field
             label="Description"
@@ -820,7 +820,7 @@ const [copied, setCopied] = useState(false);
             value={form.faqs}
             onChange={(value) => updateField("faqs", value)}
             placeholder={
-              "What is SEO? | SEO improves a website's visibility.\nHow long does SEO take? | SEO is an ongoing process."
+              "Question | Answer\nAnother question | Another answer"
             }
             multiline
             rows={8}
@@ -841,7 +841,7 @@ const [copied, setCopied] = useState(false);
             value={form.itemList}
             onChange={(value) => updateField("itemList", value)}
             placeholder={
-              "Home | https://example.com/\nSEO | https://example.com/seo/\nSEO Services | https://example.com/seo-services/"
+              "Page name | https://example.com/page\nAnother page | https://example.com/another-page"
             }
             multiline
             rows={8}
@@ -868,7 +868,7 @@ const [copied, setCopied] = useState(false);
             label="Job title"
             value={form.jobTitle}
             onChange={(value) => updateField("jobTitle", value)}
-            placeholder="SEO Consultant"
+            placeholder="Job title"
           />
           <Field
             label="Description"
@@ -968,19 +968,19 @@ const [copied, setCopied] = useState(false);
             label="City"
             value={form.city}
             onChange={(value) => updateField("city", value)}
-            placeholder="Mumbai"
+            placeholder="City"
           />
           <Field
             label="State / region"
             value={form.region}
             onChange={(value) => updateField("region", value)}
-            placeholder="Maharashtra"
+            placeholder="State or region"
           />
           <Field
             label="Country"
             value={form.country}
             onChange={(value) => updateField("country", value)}
-            placeholder="India"
+            placeholder="Country"
           />
         </>
       );
@@ -1019,7 +1019,7 @@ const [copied, setCopied] = useState(false);
             label="Ingredients"
             value={form.ingredients}
             onChange={(value) => updateField("ingredients", value)}
-            placeholder={"2 cups flour\n1 cup milk\n1 tsp salt"}
+            placeholder={"Ingredient 1\nIngredient 2\nIngredient 3"}
             multiline
             rows={6}
           />
@@ -1062,31 +1062,31 @@ const [copied, setCopied] = useState(false);
             label="Application category"
             value={form.serviceType}
             onChange={(value) => updateField("serviceType", value)}
-            placeholder="BusinessApplication"
+            placeholder="Application category"
           />
           <Field
             label="Operating system"
             value={form.operatingSystem}
             onChange={(value) => updateField("operatingSystem", value)}
-            placeholder="Web"
+            placeholder="Operating system"
           />
           <Field
             label="Software version"
             value={form.softwareVersion}
             onChange={(value) => updateField("softwareVersion", value)}
-            placeholder="1.0"
+            placeholder="Software version"
           />
           <Field
             label="Price"
             value={form.price}
             onChange={(value) => updateField("price", value)}
-            placeholder="0"
+            placeholder="Price"
           />
           <Field
             label="Currency"
             value={form.currency}
             onChange={(value) => updateField("currency", value)}
-            placeholder="INR"
+            placeholder="Currency code"
           />
         </>
       );
