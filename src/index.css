@@ -615,7 +615,11 @@ svg {
   font-weight: 750;
   white-space: nowrap;
 }
-
+.status-pill.incomplete {
+  color: #b45309;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
 .status-pill::before {
   content: "";
   width: 6px;
