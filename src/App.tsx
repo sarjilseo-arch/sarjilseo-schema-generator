@@ -449,8 +449,9 @@ function App() {
     useState<SchemaType>("Organization");
   const [form, setForm] = useState<FormData>(initialForm);
   const [reviewInput, setReviewInput] = useState("");
-  const [reviewError, setReviewError] = useState("");
-  const [copied, setCopied] = useState(false);
+const [reviewError, setReviewError] = useState("");
+const [reviewSuccess, setReviewSuccess] = useState("");
+const [copied, setCopied] = useState(false);
 
   const generatedSchema = useMemo(() => {
     try {
@@ -489,26 +490,32 @@ function App() {
   };
 
   const review = () => {
-    setReviewError("");
+  setReviewError("");
+  setReviewSuccess("");
 
-    try {
-      const parsed = JSON.parse(reviewInput);
+  try {
+    const parsed = JSON.parse(reviewInput);
 
-      const types = Array.isArray(parsed)
-        ? parsed.map((item) => item?.["@type"]).filter(Boolean)
-        : [parsed?.["@type"]].filter(Boolean);
+    const types = Array.isArray(parsed)
+      ? parsed.map((item) => item?.["@type"]).filter(Boolean)
+      : [parsed?.["@type"]].filter(Boolean);
 
-      if (types.length === 0) {
-        setReviewError(
-          "No @type property was found in the supplied JSON-LD."
-        );
-      }
-    } catch {
+    if (types.length === 0) {
       setReviewError(
-        "The supplied content is not valid JSON. Check commas, quotes, brackets and braces."
+        "No @type property was found in the supplied JSON-LD."
       );
+      return;
     }
-  };
+
+    setReviewSuccess(
+      `Valid JSON-LD. Detected schema type: ${types.join(", ")}.`
+    );
+  } catch {
+    setReviewError(
+      "The supplied content is not valid JSON. Check commas, quotes, brackets and braces."
+    );
+  }
+};
 
   const reset = () => {
     setForm(initialForm);
@@ -1201,8 +1208,12 @@ function App() {
               />
 
               {reviewError && (
-                <div className="review-error">{reviewError}</div>
-              )}
+  <div className="review-error">{reviewError}</div>
+)}
+
+{reviewSuccess && (
+  <div className="review-success">{reviewSuccess}</div>
+)}
 
               <div className="actions">
                 <button className="button primary" onClick={review}>
