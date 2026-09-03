@@ -461,11 +461,27 @@ const [copied, setCopied] = useState(false);
     }
   }, [schemaType, form]);
 
-  const updateField = (key: keyof FormData, value: string) => {
-    setForm((current) => ({
-      ...current,
-      [key]: value,
-    }));
+    const requiredFields: Partial<Record<SchemaType, (keyof FormData)[]>> = {
+    Organization: ["name", "url"],
+    LocalBusiness: ["name"],
+    Article: ["name", "url", "author"],
+    BlogPosting: ["name", "url", "author"],
+    Product: ["name"],
+    Service: ["name"],
+    FAQPage: ["faqs"],
+    BreadcrumbList: ["itemList"],
+    Person: ["personName"],
+    WebSite: ["name", "url"],
+    WebPage: ["name", "url"],
+    Event: ["name"],
+    Recipe: ["name"],
+    SoftwareApplication: ["name"],
+  };
+
+  const isFormComplete = (type: SchemaType) => {
+    const fields = requiredFields[type] ?? [];
+
+    return fields.every((field) => form[field].trim() !== "");
   };
 
   const copyText = async (text: string) => {
@@ -1159,7 +1175,13 @@ const [copied, setCopied] = useState(false);
                   <p>Review the markup before placing it on your page.</p>
                 </div>
 
-                <span className="status-pill">Ready</span>
+                <span
+  className={`status-pill ${
+    isFormComplete(schemaType) ? "ready" : "incomplete"
+  }`}
+>
+  {isFormComplete(schemaType) ? "Ready" : "Incomplete"}
+</span>
               </div>
 
               <pre className="code-output">
