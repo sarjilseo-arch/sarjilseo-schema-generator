@@ -1098,16 +1098,35 @@ const [copied, setCopied] = useState(false);
   return (
     <div className="app-shell">
       <header className="topbar">
-        <div className="brand">
-          <div className="brand-mark">S</div>
-          <div>
-            <div className="brand-name">SarjilSEO</div>
-            <div className="brand-subtitle">Schema Markup Generator</div>
-          </div>
-        </div>
+  <div className="brand">
+    <div className="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 48 48">
+        <path
+          d="M10 28a14 14 0 1 1 28 0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M24 24l7-7"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
+        <circle cx="24" cy="24" r="2.5" fill="currentColor" />
+      </svg>
+    </div>
 
-        <div className="header-badge">Free Tool</div>
-      </header>
+    <div>
+      <div className="brand-name">SarjiLSEO Schema Generator</div>
+      <div className="brand-subtitle">
+        Structured data &amp; SEO markup tool
+      </div>
+    </div>
+  </div>
+</header>
 
       <main className="container">
         <section className="hero">
