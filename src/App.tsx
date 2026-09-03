@@ -461,6 +461,13 @@ const [copied, setCopied] = useState(false);
     }
   }, [schemaType, form]);
 
+    const updateField = (key: keyof FormData, value: string) => {
+    setForm((current) => ({
+      ...current,
+      [key]: value,
+    }));
+  };
+
     const requiredFields: Partial<Record<SchemaType, (keyof FormData)[]>> = {
     Organization: ["name", "url"],
     LocalBusiness: ["name"],
