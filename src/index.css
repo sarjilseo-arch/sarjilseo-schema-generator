@@ -128,7 +128,7 @@ svg {
 
 .topbar {
   width: 100%;
-  background: rgba(255, 255, 255, 0.96);
+  background: #ffffff;
   border-bottom: 1px solid var(--border);
   position: relative;
   z-index: 10;
@@ -139,27 +139,29 @@ svg {
 }
 
 .brand {
-  max-width: 1180px;
-  margin: 0 auto;
-  min-height: 72px;
-  padding: 14px 24px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+
+  min-height: 132px;
+  padding: 20px 40px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 20px;
 }
 
 .brand-mark {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
+  width: 68px;
+  height: 68px;
+  flex: 0 0 68px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 11px;
+  border-radius: 20px;
 
   background: linear-gradient(
     135deg,
@@ -169,49 +171,40 @@ svg {
 
   color: #ffffff;
 
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-
   box-shadow:
-    0 5px 12px rgba(37, 99, 235, 0.22);
+    0 6px 16px rgba(37, 99, 235, 0.22);
+}
+
+.brand-mark svg {
+  width: 46px;
+  height: 46px;
+  display: block;
 }
 
 .brand-name {
   margin: 0;
+
   color: var(--text);
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 750;
-  letter-spacing: -0.01em;
+
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 800;
+
+  letter-spacing: -0.025em;
 }
 
 .brand-subtitle {
-  margin: 3px 0 0;
+  margin: 5px 0 0;
+
   color: var(--text-muted);
-  font-size: 12px;
-  line-height: 1.4;
+
+  font-size: 21px;
+  line-height: 1.35;
   font-weight: 500;
 }
 
 .header-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 30px;
-  padding: 5px 11px;
-
-  border: 1px solid #dbeafe;
-  border-radius: 999px;
-
-  background: var(--primary-soft);
-  color: var(--primary-dark);
-
-  font-size: 12px;
-  line-height: 1;
-  font-weight: 700;
-  white-space: nowrap;
+  display: none;
 }
 
 
@@ -939,26 +932,34 @@ textarea:focus-visible {
 
 @media (max-width: 640px) {
   .brand {
-    min-height: 64px;
-    padding: 11px 16px;
-  }
+  min-height: 92px;
+  padding: 14px 16px;
+  gap: 13px;
+}
 
-  .brand-mark {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
 
-    border-radius: 10px;
-    font-size: 16px;
-  }
+  border-radius: 14px;
+}
 
-  .brand-name {
-    font-size: 15px;
-  }
+.brand-mark svg {
+  width: 32px;
+  height: 32px;
+}
 
-  .brand-subtitle {
-    font-size: 11px;
-  }
+.brand-name {
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.35;
+}
 
   .header-badge {
     display: none;
