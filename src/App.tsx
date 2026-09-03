@@ -1229,11 +1229,7 @@ const [copied, setCopied] = useState(false);
                 className="review-editor"
                 value={reviewInput}
                 onChange={(event) => setReviewInput(event.target.value)}
-                placeholder={`{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Example Company"
-}`}
+                placeholder="Paste your JSON-LD here to review it..."
               />
 
               {reviewError && (
